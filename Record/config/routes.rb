@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+
+# ORDER MATTERS
+  get "/albums" => "albums#index", as: 'albums'  # add me!
+  get "/albums/new" => "albums#new", as: 'new_album'
+  get "/albums/:id" => "albums#show", as: 'album'
+  post "/albums" => "albums#create"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

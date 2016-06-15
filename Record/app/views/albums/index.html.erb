@@ -1,0 +1,13 @@
+
+<h1>Rock 'n Rails!</h1>
+<% @albums.each do |album| %>
+  <p>Title: <%= album.title %></p>
+  <p>Artist: <%= album.artist %></p>
+  <img src="<%= album.cover_art %>">
+  <!-- anchor tag that links to a show page -->
+  <br>
+  
+  <a href="/albums/<%= album.id %>">Show page</a><br> <!-- bad -->
+  <%#= link_to "Show page", albums_path(album) %>       <!-- good -->
+<% end %>
+
